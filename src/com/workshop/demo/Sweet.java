@@ -4,16 +4,24 @@ import java.util.List;
 import java.util.Objects;
 
 public class Sweet {
+	enum Shape {
+		TRIANGLE, SQUARE, ROUND, Diamond
+	}
+
+	enum Colour {
+		RED, GREEN, YELLOW, BROWN, BLACK, WHITE
+	}
+
 	String name;
-	String shape;
-	String colour;
-	
+	Shape shape;
+	Colour colour;
 	int price;
 	List<String> ingredient;
-	
+
 	@Override
 	public String toString() {
-		return  getClass().getSimpleName() + " [shape=" + shape + ", colour=" + colour + ", price=" + price + ", ingredient=" + ingredient + "]";
+		return getClass().getSimpleName() + " [shape=" + shape + ", colour=" + colour + ", price=" + price
+				+ ", ingredient=" + ingredient + "]";
 	}
 
 	@Override
@@ -35,7 +43,3 @@ public class Sweet {
 	}
 
 }
-	
-
-	
-

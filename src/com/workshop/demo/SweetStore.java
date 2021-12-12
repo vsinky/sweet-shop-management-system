@@ -6,8 +6,16 @@ import java.util.Set;
 import java.util.List;
 
 public class SweetStore {
-
+	private static SweetStore instance;
 	private Set<Sweet> sweetList = new HashSet<>();
+
+	public static SweetStore getInstance() {
+
+		if (instance == null) {
+			instance = new SweetStore();
+		}
+		return instance;
+	}
 
 	public void add(Sweet sweet) {
 		sweetList.add(sweet);
@@ -30,4 +38,5 @@ public class SweetStore {
 
 		return null;
 	}
+
 }
