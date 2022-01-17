@@ -20,7 +20,7 @@ public class Sweet {
 
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + " [shape=" + shape + ", colour=" + colour + ", price=" + price
+		return getClass().getSimpleName() + " [name=" +name + "shape=" + shape + ", colour=" + colour + ", price=" + price
 				+ ", ingredient=" + ingredient + "]";
 	}
 

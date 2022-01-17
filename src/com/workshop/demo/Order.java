@@ -1,14 +1,15 @@
 package com.workshop.demo;
 
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class Order {
 	private int id;
-	private Map<Integer, Sweet> sweetMap;
+	private Map<Sweet,Integer> sweetMap;
 	private String customerName;
 	private long phoneNumber;
-	private double totalPrice;
+	public double totalPrice =0 ;
 
 	@Override
 	public String toString() {
@@ -28,7 +29,7 @@ public class Order {
 		return id;
 	}
 
-	public Map<Integer, Sweet> getSweetMap() {
+	public Map<Sweet,Integer> getSweetMap() {
 		return sweetMap;
 	}
 
@@ -37,6 +38,10 @@ public class Order {
 	}
 
 	public double getTotalPrice() {
+		for(Entry<Sweet, Integer> map:sweetMap.entrySet()){
+			totalPrice = totalPrice+ map.getKey().price*map.getValue();
+			
+		}
 		return totalPrice;
 	}
 
@@ -44,7 +49,7 @@ public class Order {
 		this.id = id;
 	}
 
-	public void setSweetMap(Map<Integer, Sweet> sweetMap) {
+	public void setSweetMap(Map<Sweet,Integer> sweetMap) {
 		this.sweetMap = sweetMap;
 	}
 
@@ -52,8 +57,8 @@ public class Order {
 		this.customerName = customerName;
 	}
 
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
+	public void setTotalPrice() {
+		this.totalPrice = getTotalPrice();
 	}
 
 }
